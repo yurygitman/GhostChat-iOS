@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>19D1784C-7CC3-4B42-B0A2-6D87AE64A621</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GhostChat-iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>05E6542863D027D11458EB7BAE0570EF60C9599C</key>
+		<string>https://github.com/samuraipapa/GhostChat-iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GhostChat-iOS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>05E6542863D027D11458EB7BAE0570EF60C9599C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/samuraipapa/GhostChat-iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>05E6542863D027D11458EB7BAE0570EF60C9599C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>05E6542863D027D11458EB7BAE0570EF60C9599C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GhostChat-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
