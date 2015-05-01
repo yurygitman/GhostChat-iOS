@@ -6,5 +6,8 @@
 # Screen Shot
 ![ScreenShot](https://github.com/WorldFamousElectronics/PulseSensor_Amped_Arduino/blob/master/pics/ScreenCapArduino.png) 
 
-## Installing
-Code Runs On: iOS 8.3+  &  xCode 6.3+  &  OSX 10.10+
+# Code Runs On:
++ iOS 8.3+
++ OSX 10.10+
++ xCode 6.3+  
+ 
