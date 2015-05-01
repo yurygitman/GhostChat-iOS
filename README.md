@@ -4,7 +4,7 @@
 3. Does not use the Internet. Secure and off the Cloud.  
 
 # Screen Shot
-![ScreenShot](https://github.com/WorldFamousElectronics/PulseSensor_Amped_Arduino/blob/master/pics/ScreenCapArduino.png) 
+![ScreenShot](https://github.com/samuraipapa/GhostChat-iOS/blob/master/screen1.png) 
 
 # Code Runs On:
 + iOS 8.3+
