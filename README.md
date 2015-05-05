@@ -3,8 +3,6 @@
 2. Works in Airplane Mode
 3. Does not use the Internet. Secure and off the Cloud.  
 
-# Screen Shot
-
 
 # Code Runs On:
 + iOS 8.3+
