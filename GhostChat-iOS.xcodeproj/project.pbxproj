@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		245EC0A91AFE61E400EFC5C8 /* 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0A61AFE61E400EFC5C8 /* 58x58.png */; };
+		245EC0AA1AFE61E400EFC5C8 /* 58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0A61AFE61E400EFC5C8 /* 58x58.png */; };
+		245EC0AB1AFE61E400EFC5C8 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0A71AFE61E400EFC5C8 /* 80x80.png */; };
+		245EC0AC1AFE61E400EFC5C8 /* 80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0A71AFE61E400EFC5C8 /* 80x80.png */; };
+		245EC0AD1AFE61E400EFC5C8 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0A81AFE61E400EFC5C8 /* 120x120.png */; };
+		245EC0AE1AFE61E400EFC5C8 /* 120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0A81AFE61E400EFC5C8 /* 120x120.png */; };
+		245EC0B01AFE649A00EFC5C8 /* 180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0AF1AFE649A00EFC5C8 /* 180x180.png */; };
+		245EC0B11AFE649A00EFC5C8 /* 180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0AF1AFE649A00EFC5C8 /* 180x180.png */; };
+		245EC0B31AFE64A600EFC5C8 /* 87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0B21AFE64A600EFC5C8 /* 87x87.png */; };
+		245EC0B41AFE64A600EFC5C8 /* 87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0B21AFE64A600EFC5C8 /* 87x87.png */; };
+		245EC0B61AFE85C400EFC5C8 /* arriba.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0B51AFE85C400EFC5C8 /* arriba.png */; };
+		245EC0B71AFE85C400EFC5C8 /* arriba.png in Resources */ = {isa = PBXBuildFile; fileRef = 245EC0B51AFE85C400EFC5C8 /* arriba.png */; };
 		6C7849121AED4DD50054DBED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7849111AED4DD50054DBED /* AppDelegate.swift */; };
 		6C7849141AED4DD50054DBED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7849131AED4DD50054DBED /* ViewController.swift */; };
 		6C7849171AED4DD50054DBED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7849151AED4DD50054DBED /* Main.storyboard */; };
@@ -26,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		245EC0A61AFE61E400EFC5C8 /* 58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58x58.png; sourceTree = "<group>"; };
+		245EC0A71AFE61E400EFC5C8 /* 80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 80x80.png; sourceTree = "<group>"; };
+		245EC0A81AFE61E400EFC5C8 /* 120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120x120.png; sourceTree = "<group>"; };
+		245EC0AF1AFE649A00EFC5C8 /* 180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 180x180.png; sourceTree = "<group>"; };
+		245EC0B21AFE64A600EFC5C8 /* 87x87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 87x87.png; sourceTree = "<group>"; };
+		245EC0B51AFE85C400EFC5C8 /* arriba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arriba.png; sourceTree = "<group>"; };
 		6C78490C1AED4DD50054DBED /* GhostChat-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GhostChat-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7849101AED4DD50054DBED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C7849111AED4DD50054DBED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +125,12 @@
 		6C7849251AED4DD50054DBED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				245EC0A61AFE61E400EFC5C8 /* 58x58.png */,
+				245EC0A71AFE61E400EFC5C8 /* 80x80.png */,
+				245EC0B21AFE64A600EFC5C8 /* 87x87.png */,
+				245EC0B51AFE85C400EFC5C8 /* arriba.png */,
+				245EC0A81AFE61E400EFC5C8 /* 120x120.png */,
+				245EC0AF1AFE649A00EFC5C8 /* 180x180.png */,
 				6C7849261AED4DD50054DBED /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -194,7 +218,13 @@
 			files = (
 				6C7849171AED4DD50054DBED /* Main.storyboard in Resources */,
 				6C78491C1AED4DD50054DBED /* LaunchScreen.xib in Resources */,
+				245EC0B31AFE64A600EFC5C8 /* 87x87.png in Resources */,
+				245EC0A91AFE61E400EFC5C8 /* 58x58.png in Resources */,
+				245EC0AB1AFE61E400EFC5C8 /* 80x80.png in Resources */,
+				245EC0B01AFE649A00EFC5C8 /* 180x180.png in Resources */,
+				245EC0AD1AFE61E400EFC5C8 /* 120x120.png in Resources */,
 				6C7849191AED4DD50054DBED /* Images.xcassets in Resources */,
+				245EC0B61AFE85C400EFC5C8 /* arriba.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +232,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				245EC0B11AFE649A00EFC5C8 /* 180x180.png in Resources */,
+				245EC0AC1AFE61E400EFC5C8 /* 80x80.png in Resources */,
+				245EC0B71AFE85C400EFC5C8 /* arriba.png in Resources */,
+				245EC0AE1AFE61E400EFC5C8 /* 120x120.png in Resources */,
+				245EC0AA1AFE61E400EFC5C8 /* 58x58.png in Resources */,
+				245EC0B41AFE64A600EFC5C8 /* 87x87.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +445,7 @@
 				6C78492D1AED4DD50054DBED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C78492E1AED4DD50054DBED /* Build configuration list for PBXNativeTarget "GhostChat-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +454,7 @@
 				6C7849301AED4DD50054DBED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
