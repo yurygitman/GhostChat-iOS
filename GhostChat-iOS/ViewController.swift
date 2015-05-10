@@ -21,6 +21,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     var identifer = "My ID"
     // A newly generated UUID for Peripheral
     var uuid = NSUUID()
+    var refreshControl:UIRefreshControl!
     
     
     // Chat Array
@@ -44,18 +45,34 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var myTextField: UITextField!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     @IBAction func sendButtonPressed(sender: UIButton) {
         advertiseNewName(myTextField.text)
-
     }
     
     @IBAction func refreshPressed(sender: UIButton) {
         myCentralManager.stopScan()
-        refreshArrays()
+        //refreshArrays()
         startScanning()
         
     }
+    
+    func refreshArrays(sender: AnyObject){
+        
+        fullPeripheralArray.removeAll(keepCapacity: false)
+        cleanAndSortedArray.removeAll(keepCapacity: false)
+        myPeripheralDictionary.removeAll(keepCapacity: false)
+        
+        cleanAndSortedChatArray.removeAll(keepCapacity: false)
+        fullChatArray.removeAll(keepCapacity: false)
+        chatDictionary.removeAll(keepCapacity: false)
+        
+        // display a clean table
+        self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
+
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -63,9 +80,22 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         advertiseNewName(myTextField.text)
         putPeripheralManagerIntoMainQueue()
         
+        //dismiss keyboard
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: "didTapView")
+        self.view.addGestureRecognizer(tapRecognizer)
+        
+        //refresh
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refreshArrays:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
+        
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name:UIKeyboardWillShowNotification, object: nil);
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
 
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,21 +121,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         }
     }
     
-    func refreshArrays(){
-        
-        fullPeripheralArray.removeAll(keepCapacity: false)
-        cleanAndSortedArray.removeAll(keepCapacity: false)
-        myPeripheralDictionary.removeAll(keepCapacity: false)
-        
-        cleanAndSortedChatArray.removeAll(keepCapacity: false)
-        fullChatArray.removeAll(keepCapacity: false)
-        chatDictionary.removeAll(keepCapacity: false)
-        
-        // display a clean table
-        tableView.reloadData()
-        
+    //dismiss keyboard
+    func didTapView(){
+        self.view.endEditing(true)
     }
-    
     
     
     // MARK:  - CBPeripheral
@@ -199,10 +218,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         
         let theUUid = CBUUID(NSUUID: uuid)
         
-        let nameString = nameField.text
+        //let nameString = nameField.text
         
         let dataToBeAdvertised:[String:AnyObject!] = [
-            CBAdvertisementDataLocalNameKey: "Ghost \(nameString): \(passedString)",
+            CBAdvertisementDataLocalNameKey: "Ghost: \(passedString)",
             CBAdvertisementDataManufacturerDataKey: "Hello anufacturerDataKey",
             CBAdvertisementDataServiceUUIDsKey: [theUUid],]
         
