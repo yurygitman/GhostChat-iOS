@@ -10,7 +10,7 @@ import UIKit
 import CoreBluetooth
 
 
-class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate {
+class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate, UITextFieldDelegate {
 
     // MARK: - Globals
     
@@ -49,8 +49,18 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
 
     @IBAction func sendButtonPressed(sender: UIButton) {
                 self.view.endEditing(true)
+        
+
+        
         advertiseNewName(myTextField.text)
+        myTextField.text = ""
     }
+    
+    func  textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
     
     @IBAction func refreshPressed(sender: UIButton) {
         myCentralManager.stopScan()
@@ -85,6 +95,14 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: "didTapView")
         self.view.addGestureRecognizer(tapRecognizer)
+        
+     //   func textFieldShouldReturn(textField: UITextField) -> Bool {
+         //   textField.resignFirstResponder()
+          //  return false
+        //}
+        
+  
+        
         
         //refresh
         self.refreshControl = UIRefreshControl()
@@ -444,6 +462,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             cell.textLabel?.text = "\(cleanAndSortedChatArray[indexPath.row].2)"
             cell.detailTextLabel?.text = cleanAndSortedChatArray[indexPath.row].1
             
+            var myImage = UIImage (named: "CellIcon")
+                cell.imageView?.image = myImage
+            
+                        
             return cell
             
         } else {
