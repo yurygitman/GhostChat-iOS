@@ -1,0 +1,4 @@
+version: "Apple Swift version 1.2 (swiftlang-602.0.49.6 clang-602.0.49)"
+options: "1422bf3c2a8b6888ee529dc1535614d4"
+inputs: 
+- "/Users/Sk/Documents/GhostChat-iOS/GhostChat-iOSTests/GhostChat_iOSTests.swift"
