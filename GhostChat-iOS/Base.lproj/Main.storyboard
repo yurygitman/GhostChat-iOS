@@ -17,14 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arriba.png" translatesAutoresizingMaskIntoConstraints="NO" id="kHm-Jf-AFq">
-                                <rect key="frame" x="0.0" y="20" width="603" height="88"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isk-yC-YM7">
+                                <rect key="frame" x="514" y="562" width="86" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="QYi-kT-lzT"/>
+                                    <constraint firstAttribute="width" constant="86" id="prB-zE-668"/>
+                                </constraints>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YR0-jd-fJA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Just got here." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-8H-e3Q">
+                                <rect key="frame" x="16" y="562" width="498" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arriba.png" translatesAutoresizingMaskIntoConstraints="NO" id="VRb-5A-L41">
+                                <rect key="frame" x="0.0" y="0.0" width="605" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="qed-iZ-BeO"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hC3-CC-y27">
-                                <rect key="frame" x="-2" y="116" width="605" height="438"/>
+                                <rect key="frame" x="-10" y="66" width="605" height="488"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,41 +85,25 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="zwk-3b-Wg7"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isk-yC-YM7">
-                                <rect key="frame" x="514" y="562" width="86" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="prB-zE-668"/>
-                                </constraints>
-                                <state key="normal" title="Send">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YR0-jd-fJA"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Just got here." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-8H-e3Q">
-                                <rect key="frame" x="16" y="562" width="498" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="kHm-Jf-AFq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="A0T-iv-Xkz"/>
+                            <constraint firstItem="VRb-5A-L41" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="COc-MP-Dm1"/>
                             <constraint firstItem="Lc4-8H-e3Q" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="GYa-ce-I0n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VRb-5A-L41" secondAttribute="trailing" constant="-21" id="LuP-ql-Da2"/>
+                            <constraint firstItem="VRb-5A-L41" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="OXm-tS-2No"/>
                             <constraint firstItem="isk-yC-YM7" firstAttribute="leading" secondItem="Lc4-8H-e3Q" secondAttribute="trailing" id="Pfb-or-CFl"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Lc4-8H-e3Q" secondAttribute="bottom" constant="8" symbolic="YES" id="RXD-bK-8Kv"/>
-                            <constraint firstItem="Lc4-8H-e3Q" firstAttribute="top" secondItem="hC3-CC-y27" secondAttribute="bottom" constant="8" symbolic="YES" id="T7k-Uh-ZAj"/>
-                            <constraint firstItem="hC3-CC-y27" firstAttribute="top" secondItem="kHm-Jf-AFq" secondAttribute="bottom" constant="8" symbolic="YES" id="Wyu-lQ-rl2"/>
-                            <constraint firstItem="hC3-CC-y27" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-18" id="cM7-aM-GdX"/>
-                            <constraint firstItem="kHm-Jf-AFq" firstAttribute="trailing" secondItem="hC3-CC-y27" secondAttribute="trailing" id="eUv-7K-Doo"/>
+                            <constraint firstItem="Lc4-8H-e3Q" firstAttribute="top" secondItem="hC3-CC-y27" secondAttribute="bottom" constant="8" id="T7k-Uh-ZAj"/>
+                            <constraint firstItem="hC3-CC-y27" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-26" id="cM7-aM-GdX"/>
                             <constraint firstItem="isk-yC-YM7" firstAttribute="top" secondItem="Lc4-8H-e3Q" secondAttribute="top" id="hyF-xN-0Cq"/>
                             <constraint firstAttribute="trailing" secondItem="isk-yC-YM7" secondAttribute="trailing" id="rGV-DS-OIN"/>
-                            <constraint firstItem="kHm-Jf-AFq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="ud1-7a-I5K"/>
-                            <constraint firstItem="hC3-CC-y27" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="uhZ-D9-IEH"/>
+                            <constraint firstItem="hC3-CC-y27" firstAttribute="top" secondItem="VRb-5A-L41" secondAttribute="bottom" constant="8" id="uNs-Ie-lzy"/>
+                            <constraint firstItem="hC3-CC-y27" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" constant="-7.5" id="uhZ-D9-IEH"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="RXD-bK-8Kv" id="z6L-pn-pfl"/>
                         <outlet property="myTextField" destination="Lc4-8H-e3Q" id="Lwy-Vo-Hbn"/>
                         <outlet property="tableView" destination="hC3-CC-y27" id="aeH-OT-8fG"/>
                     </connections>
@@ -113,6 +114,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arriba.png" width="613" height="74"/>
+        <image name="arriba.png" width="2542" height="254"/>
     </resources>
 </document>
