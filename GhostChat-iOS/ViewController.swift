@@ -48,6 +48,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     @IBAction func sendButtonPressed(sender: UIButton) {
+                self.view.endEditing(true)
         advertiseNewName(myTextField.text)
     }
     
@@ -145,7 +146,10 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     //dismiss keyboard
     func didTapView(){
         self.view.endEditing(true)
+
     }
+    
+
     
     
     // MARK:  - CBPeripheral
