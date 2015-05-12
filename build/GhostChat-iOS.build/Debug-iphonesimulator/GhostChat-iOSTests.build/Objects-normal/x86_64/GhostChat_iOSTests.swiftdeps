@@ -4,20 +4,20 @@ provides:
 nominals:
 - "C18GhostChat_iOSTests18GhostChat_iOSTests"
 class-members:
-- "setUp"
-- "testExample"
-- "testPerformanceExample"
 - "tearDown"
+- "setUp"
+- "testPerformanceExample"
+- "testExample"
 top-level:
-- !private "StringLiteralType"
+- !private "BooleanLiteralType"
 - !private "XCTAssert"
 - "XCTestCase"
-- !private "BooleanLiteralType"
+- !private "StringLiteralType"
 member-access:
 - "CSo6XCTest"
+- !private "C18GhostChat_iOSTests18GhostChat_iOSTests"
 - "CSo10XCTestCase"
 - "CSo8NSObject"
-- !private "C18GhostChat_iOSTests18GhostChat_iOSTests"
 - "PSs9AnyObject"
 dynamic-lookup:
 cross-module:

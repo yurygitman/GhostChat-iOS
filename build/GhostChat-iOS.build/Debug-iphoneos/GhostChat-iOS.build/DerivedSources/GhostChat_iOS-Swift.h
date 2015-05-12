@@ -105,21 +105,51 @@ SWIFT_CLASS("_TtC13GhostChat_iOS11AppDelegate")
 - (SWIFT_NULLABILITY(nonnull) instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITableView;
+@class NSIndexPath;
+@class UITableViewCell;
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC13GhostChat_iOS14IndividualChat")
+@interface IndividualChat : UITableViewController
+@property (nonatomic, copy) NSArray * __nonnull messages;
+@property (nonatomic, copy) NSArray * __nonnull mockMessages;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * __nonnull)tableView;
+- (NSInteger)tableView:(UITableView * __nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (void)loadMessages;
+- (UITableViewCell * __nonnull)tableView:(UITableView * __nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithNibName:(NSString * __null_unspecified)nibNameOrNil bundle:(NSBundle * __null_unspecified)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(null_unspecified) instancetype)initWithCoder:(NSCoder * __null_unspecified)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UILabel;
+
+SWIFT_CLASS("_TtC13GhostChat_iOS18IndividualChatCell")
+@interface IndividualChatCell : UITableViewCell
+@property (nonatomic, copy) NSString * __nullable content;
+- (void)updateUI;
+@property (nonatomic, weak) IBOutlet UILabel * __null_unspecified messageText;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * __nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (SWIFT_NULLABILITY(nonnull) instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class CBPeripheralManager;
 @class NSUUID;
 @class CBCentralManager;
 @class CBPeripheral;
 @class UIButton;
-@class NSError;
-@class NSCoder;
-@class NSNumber;
-@class UITableView;
-@class NSIndexPath;
-@class UITableViewCell;
 @class UITextField;
+@class NSError;
+@class NSNumber;
 
 SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
-@interface ViewController : UIViewController <CBPeripheralManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface ViewController : UIViewController <CBPeripheralManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UITextFieldDelegate>
 @property (nonatomic) CBPeripheralManager * __nullable myPeripheralManager;
 @property (nonatomic, copy) NSDictionary * __nullable dataToBeAdvertisedGolbal;
 @property (nonatomic, copy) NSString * __nonnull identifer;
@@ -131,6 +161,7 @@ SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
 @property (nonatomic, weak) IBOutlet UITextField * __null_unspecified myTextField;
 - (IBAction)sendButtonPressed:(UIButton * __nonnull)sender;
 - (IBAction)refreshPressed:(UIButton * __nonnull)sender;
+- (BOOL)textFieldShouldReturn:(UITextField * __nonnull)textField;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)updateStatusText:(NSString * __nonnull)passedString;

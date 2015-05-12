@@ -10,7 +10,7 @@ import UIKit
 import CoreBluetooth
 
 
-class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate {
+class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate, UITextFieldDelegate {
 
     // MARK: - Globals
     
@@ -47,14 +47,20 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
 
     @IBAction func sendButtonPressed(sender: UIButton) {
         advertiseNewName(myTextField.text)
+        myTextField.resignFirstResponder()
 
     }
-    
     @IBAction func refreshPressed(sender: UIButton) {
         myCentralManager.stopScan()
         refreshArrays()
         startScanning()
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        advertiseNewName(myTextField.text)
+        textField.resignFirstResponder()
+        return true
     }
     
     // MARK: - ViewDidLoad
@@ -308,7 +314,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         var myMessageString: String!
         
         
-        //myMessageString = advertisementData[CBAdvertisementDataManufacturerDataKey] as String
+       // myMessageString = advertisementData[CBAdvertisementDataManufacturerDataKey] as String
         
         
         let prefixString = "Ghost"
@@ -431,6 +437,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //
+        
         println("selected: \(indexPath.row)")
   //      updateStatusLabel("selected: \(cleanAndSortedArray[indexPath.row].3)")
         

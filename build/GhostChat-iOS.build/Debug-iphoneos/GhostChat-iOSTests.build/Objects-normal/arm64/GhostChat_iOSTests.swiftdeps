@@ -4,21 +4,21 @@ provides:
 nominals:
 - "C18GhostChat_iOSTests18GhostChat_iOSTests"
 class-members:
+- "tearDown"
+- "testPerformanceExample"
 - "setUp"
 - "testExample"
-- "testPerformanceExample"
-- "tearDown"
 top-level:
 - !private "BooleanLiteralType"
 - !private "XCTAssert"
-- !private "StringLiteralType"
 - "XCTestCase"
+- !private "StringLiteralType"
 member-access:
-- "CSo6XCTest"
-- "PSs9AnyObject"
 - "CSo8NSObject"
 - !private "C18GhostChat_iOSTests18GhostChat_iOSTests"
 - "CSo10XCTestCase"
+- "CSo6XCTest"
+- "PSs9AnyObject"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/Swift.swiftmodule"
