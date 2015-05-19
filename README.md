@@ -7,6 +7,7 @@
 # Screen Shot
 ![ScreenShot](https://github.com/Samanrtehrani/GhostChat-iOS/blob/master/screenshot.png) 
 
+![ScreenShot](https://github.com/Samanrtehrani/GhostChat-iOS/blob/master/screenshot2.png) 
 # Code Runs On:
 + iOS 8.3+
 + OSX 10.10+
