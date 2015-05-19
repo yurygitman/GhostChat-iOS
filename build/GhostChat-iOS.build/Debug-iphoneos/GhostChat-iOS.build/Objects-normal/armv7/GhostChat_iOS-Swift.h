@@ -114,6 +114,7 @@ SWIFT_CLASS("_TtC13GhostChat_iOS11AppDelegate")
 SWIFT_CLASS("_TtC13GhostChat_iOS14IndividualChat")
 @interface IndividualChat : UITableViewController
 @property (nonatomic, copy) NSArray * __nonnull messages;
+@property (nonatomic, copy) NSArray * __nonnull mockMessages;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * __nonnull)tableView;
@@ -143,16 +144,18 @@ SWIFT_CLASS("_TtC13GhostChat_iOS18IndividualChatCell")
 @class CBCentralManager;
 @class CBPeripheral;
 @class UIButton;
+@class UITextField;
 @class NSError;
 @class NSNumber;
-@class UITextField;
 
 SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
-@interface ViewController : UIViewController <CBPeripheralManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface ViewController : UIViewController <CBPeripheralManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UITextFieldDelegate>
 @property (nonatomic) CBPeripheralManager * __nullable myPeripheralManager;
 @property (nonatomic, copy) NSDictionary * __nullable dataToBeAdvertisedGolbal;
 @property (nonatomic, copy) NSString * __nonnull identifer;
 @property (nonatomic) NSUUID * __nonnull uuid;
+@property (nonatomic, copy) NSDictionary * __nonnull messagesDictionary;
+@property (nonatomic, copy) NSDictionary * __nonnull usernamesDictionary;
 @property (nonatomic) CBCentralManager * __nonnull myCentralManager;
 @property (nonatomic, copy) NSArray * __nonnull peripheralArray;
 @property (nonatomic, weak) IBOutlet UITableView * __null_unspecified tableView;
@@ -160,6 +163,7 @@ SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
 @property (nonatomic, weak) IBOutlet UITextField * __null_unspecified myTextField;
 - (IBAction)sendButtonPressed:(UIButton * __nonnull)sender;
 - (IBAction)refreshPressed:(UIButton * __nonnull)sender;
+- (BOOL)textFieldShouldReturn:(UITextField * __nonnull)textField;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)updateStatusText:(NSString * __nonnull)passedString;

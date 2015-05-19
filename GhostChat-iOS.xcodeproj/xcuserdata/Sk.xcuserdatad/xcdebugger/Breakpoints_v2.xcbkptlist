@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GhostChat-iOS/ChatThread.swift"
+            timestampString = "453147149.258411"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ChatThread"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GhostChat_iOS.ChatThread.thread.getter : Swift.Array&lt;(Swift.Bool, Swift.String)&gt;"
+                  moduleName = "GhostChat-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sk/Documents/GhostChat-iOS/GhostChat-iOS/ChatThread.swift"
+                  timestampString = "453756459.460779"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GhostChat_iOS.ChatThread.thread.setter : Swift.Array&lt;(Swift.Bool, Swift.String)&gt;"
+                  moduleName = "GhostChat-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sk/Documents/GhostChat-iOS/GhostChat-iOS/ChatThread.swift"
+                  timestampString = "453756459.46098"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GhostChat_iOS.ChatThread.thread.materializeForSet : Swift.Array&lt;(Swift.Bool, Swift.String)&gt;"
+                  moduleName = "GhostChat-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sk/Documents/GhostChat-iOS/GhostChat-iOS/ChatThread.swift"
+                  timestampString = "453756459.461087"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GhostChat_iOS.ChatThread.init (GhostChat_iOS.ChatThread.Type)() -&gt; GhostChat_iOS.ChatThread"
+                  moduleName = "GhostChat-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sk/Documents/GhostChat-iOS/GhostChat-iOS/ChatThread.swift"
+                  timestampString = "453756459.461182"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

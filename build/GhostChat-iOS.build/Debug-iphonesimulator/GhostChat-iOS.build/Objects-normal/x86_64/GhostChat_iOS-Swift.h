@@ -149,7 +149,7 @@ SWIFT_CLASS("_TtC13GhostChat_iOS18IndividualChatCell")
 @class UITextField;
 
 SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
-@interface ViewController : UIViewController <CBPeripheralManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface ViewController : UIViewController <CBPeripheralManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UITextFieldDelegate>
 @property (nonatomic) CBPeripheralManager * __nullable myPeripheralManager;
 @property (nonatomic, copy) NSDictionary * __nullable dataToBeAdvertisedGolbal;
 @property (nonatomic, copy) NSString * __nonnull identifer;
@@ -157,9 +157,7 @@ SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
 @property (nonatomic) CBCentralManager * __nonnull myCentralManager;
 @property (nonatomic, copy) NSArray * __nonnull peripheralArray;
 @property (nonatomic, weak) IBOutlet UITableView * __null_unspecified tableView;
-@property (nonatomic, weak) IBOutlet UITextField * __null_unspecified nameField;
 @property (nonatomic, weak) IBOutlet UITextField * __null_unspecified myTextField;
-- (IBAction)sendButtonPressed:(UIButton * __nonnull)sender;
 - (IBAction)refreshPressed:(UIButton * __nonnull)sender;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
@@ -179,6 +177,7 @@ SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
 - (NSString * __nullable)tableView:(UITableView * __nonnull)tableView titleForHeaderInSection:(NSInteger)section;
 - (void)tableView:(UITableView * __nonnull)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath * __nonnull)indexPath;
 - (void)tableView:(UITableView * __nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (BOOL)textFieldShouldReturn:(UITextField * __nonnull)textField;
 @end
 
 #pragma clang diagnostic pop

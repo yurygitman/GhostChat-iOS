@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		531765761B023AF80026911D /* IndividualChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531765751B023AF80026911D /* IndividualChat.swift */; };
 		531765781B023BA10026911D /* IndividualChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531765771B023BA10026911D /* IndividualChatCell.swift */; };
+		5317657A1B026A800026911D /* ChatThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531765791B026A800026911D /* ChatThread.swift */; };
 		6C7849121AED4DD50054DBED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7849111AED4DD50054DBED /* AppDelegate.swift */; };
 		6C7849141AED4DD50054DBED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7849131AED4DD50054DBED /* ViewController.swift */; };
 		6C7849171AED4DD50054DBED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C7849151AED4DD50054DBED /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		531765751B023AF80026911D /* IndividualChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualChat.swift; sourceTree = "<group>"; };
 		531765771B023BA10026911D /* IndividualChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualChatCell.swift; sourceTree = "<group>"; };
+		531765791B026A800026911D /* ChatThread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatThread.swift; sourceTree = "<group>"; };
 		6C78490C1AED4DD50054DBED /* GhostChat-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GhostChat-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C7849101AED4DD50054DBED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C7849111AED4DD50054DBED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				6C78490F1AED4DD50054DBED /* Supporting Files */,
 				531765751B023AF80026911D /* IndividualChat.swift */,
 				531765771B023BA10026911D /* IndividualChatCell.swift */,
+				531765791B026A800026911D /* ChatThread.swift */,
 			);
 			path = "GhostChat-iOS";
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				6C7849141AED4DD50054DBED /* ViewController.swift in Sources */,
 				531765761B023AF80026911D /* IndividualChat.swift in Sources */,
 				6C7849121AED4DD50054DBED /* AppDelegate.swift in Sources */,
+				5317657A1B026A800026911D /* ChatThread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

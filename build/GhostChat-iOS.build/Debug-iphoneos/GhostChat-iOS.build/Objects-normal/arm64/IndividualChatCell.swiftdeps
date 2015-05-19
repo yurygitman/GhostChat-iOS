@@ -4,24 +4,24 @@ provides:
 nominals:
 - "C13GhostChat_iOS18IndividualChatCell"
 class-members:
-- "awakeFromNib"
+- "updateUI"
 - "setSelected"
+- "awakeFromNib"
 - "messageText"
 - "content"
-- "updateUI"
 top-level:
-- "UILabel"
 - "String"
-- "UITableViewCell"
+- "UILabel"
 - "Bool"
+- "UITableViewCell"
 member-access:
+- "CSo11UIResponder"
+- "PSs9AnyObject"
+- "C13GhostChat_iOS18IndividualChatCell"
 - "CSo15UITableViewCell"
 - !private "CSo7UILabel"
 - "CSo6UIView"
 - "CSo8NSObject"
-- "PSs9AnyObject"
-- "C13GhostChat_iOS18IndividualChatCell"
-- "CSo11UIResponder"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/Swift.swiftmodule"

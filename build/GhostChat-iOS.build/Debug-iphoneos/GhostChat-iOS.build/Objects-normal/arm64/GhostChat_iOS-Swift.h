@@ -143,10 +143,11 @@ SWIFT_CLASS("_TtC13GhostChat_iOS18IndividualChatCell")
 @class NSUUID;
 @class CBCentralManager;
 @class CBPeripheral;
-@class UIButton;
-@class UITextField;
+@class NSNotification;
 @class NSError;
 @class NSNumber;
+@class UITextField;
+@class NSLayoutConstraint;
 
 SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
 @interface ViewController : UIViewController <CBPeripheralManagerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, UITextFieldDelegate>
@@ -156,13 +157,11 @@ SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
 @property (nonatomic) NSUUID * __nonnull uuid;
 @property (nonatomic) CBCentralManager * __nonnull myCentralManager;
 @property (nonatomic, copy) NSArray * __nonnull peripheralArray;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * __null_unspecified keyboardHeightLayoutConstraint;
 @property (nonatomic, weak) IBOutlet UITableView * __null_unspecified tableView;
-@property (nonatomic, weak) IBOutlet UITextField * __null_unspecified nameField;
 @property (nonatomic, weak) IBOutlet UITextField * __null_unspecified myTextField;
-- (IBAction)sendButtonPressed:(UIButton * __nonnull)sender;
-- (IBAction)refreshPressed:(UIButton * __nonnull)sender;
-- (BOOL)textFieldShouldReturn:(UITextField * __nonnull)textField;
 - (void)viewDidLoad;
+- (void)keyboardNotification:(NSNotification * __nonnull)notification;
 - (void)didReceiveMemoryWarning;
 - (void)updateStatusText:(NSString * __nonnull)passedString;
 - (void)putPeripheralManagerIntoMainQueue;
@@ -180,6 +179,7 @@ SWIFT_CLASS("_TtC13GhostChat_iOS14ViewController")
 - (NSString * __nullable)tableView:(UITableView * __nonnull)tableView titleForHeaderInSection:(NSInteger)section;
 - (void)tableView:(UITableView * __nonnull)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath * __nonnull)indexPath;
 - (void)tableView:(UITableView * __nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * __nonnull)indexPath;
+- (BOOL)textFieldShouldReturn:(UITextField * __nonnull)textField;
 @end
 
 #pragma clang diagnostic pop

@@ -1,7 +1,8 @@
 version: "Apple Swift version 1.2 (swiftlang-602.0.49.6 clang-602.0.49)"
-options: "cbf3eeb17da4b6cbbe85f11b479b6147"
+options: "b6518da450856d85dc58319478eb718d"
 inputs: 
 - "/Users/Sk/Documents/GhostChat-iOS/GhostChat-iOS/IndividualChatCell.swift"
 - "/Users/Sk/Documents/GhostChat-iOS/GhostChat-iOS/ViewController.swift"
 - "/Users/Sk/Documents/GhostChat-iOS/GhostChat-iOS/IndividualChat.swift"
 - "/Users/Sk/Documents/GhostChat-iOS/GhostChat-iOS/AppDelegate.swift"
+- "/Users/Sk/Documents/GhostChat-iOS/GhostChat-iOS/ChatThread.swift"

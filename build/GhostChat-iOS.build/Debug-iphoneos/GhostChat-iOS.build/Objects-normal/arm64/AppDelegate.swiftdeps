@@ -4,28 +4,28 @@ provides:
 nominals:
 - "C13GhostChat_iOS11AppDelegate"
 class-members:
-- "window"
-- "applicationDidBecomeActive"
+- "applicationDidEnterBackground"
 - "application"
 - "applicationWillEnterForeground"
-- "applicationDidEnterBackground"
-- "applicationWillResignActive"
+- "window"
+- "applicationDidBecomeActive"
 - "applicationWillTerminate"
+- "applicationWillResignActive"
 top-level:
+- "UIApplication"
+- !private "BooleanLiteralType"
+- "UIWindow"
+- "NSObject"
 - "UIApplicationDelegate"
 - "Bool"
-- !private "BooleanLiteralType"
 - "UIResponder"
 - "AnyObject"
-- "NSObject"
-- "UIApplication"
-- "UIWindow"
 member-access:
-- "CSo8NSObject"
 - "CSo11UIResponder"
 - "PSs9AnyObject"
-- "PSo21UIApplicationDelegate"
+- "CSo8NSObject"
 - "C13GhostChat_iOS11AppDelegate"
+- "PSo21UIApplicationDelegate"
 dynamic-lookup:
 cross-module:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/Swift.swiftmodule"

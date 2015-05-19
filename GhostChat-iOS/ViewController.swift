@@ -1,17 +1,9 @@
-//
-//  ViewController.swift
-//  GhostChat-iOS
-//
-//  Created by GrownYoda on 4/26/15.
-//  Copyright (c) 2015 yuryg. All rights reserved.
-//
-
 import UIKit
 import CoreBluetooth
 
 
 class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate, UITextFieldDelegate {
-
+    
     // MARK: - Globals
     
     // Core Bluetooth Peripheral Stuff
@@ -24,54 +16,66 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     
     
     // Chat Array
-    var fullChatArray = [("","", "", "")]
-    var chatDictionary:[String:(String, String, String, String)] = ["UUIDString":("UUIDString","RSSI", "Name","myPeripheralDictionary Services1")]
-    var cleanAndSortedChatArray = [("","", "","")]
-    
+    var fullChatArray = [(String,String, String, String)]()
+
+    var chatDictionary = Dictionary<String, (String,String,String,String)>()
+    var cleanAndSortedChatArray = [(String,String, String, String)]()
     // BLE Peripheral Arrays
     var fullPeripheralArray = [("UUIDString","RSSI", "Name", "full Services1")]
     var myPeripheralDictionary:[String:(String, String, String, String)] = ["UUIDString":("UUIDString","RSSI", "Name","myPeripheralDictionary Services1")]
     var cleanAndSortedArray = [("UUIDString","RSSI", "Name","clean Services1")]
-
+    
     
     //  CoreBluetooth Central Stuff
     var myCentralManager = CBCentralManager()
     var peripheralArray = [CBPeripheral]() // create now empty array.
-  
     
+    
+    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     
     // MARK: - UI Stuff
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nameField: UITextField!
+
     @IBOutlet weak var myTextField: UITextField!
-
-    @IBAction func sendButtonPressed(sender: UIButton) {
-        advertiseNewName(myTextField.text)
-        myTextField.resignFirstResponder()
-
-    }
-    @IBAction func refreshPressed(sender: UIButton) {
-        myCentralManager.stopScan()
-        refreshArrays()
-        startScanning()
-        
-    }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        advertiseNewName(myTextField.text)
-        textField.resignFirstResponder()
-        return true
-    }
+    
+
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        advertiseNewName(myTextField.text)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardNotification:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardNotification:"), name:UIKeyboardWillHideNotification, object: nil);
+        
         putPeripheralManagerIntoMainQueue()
         
-
     }
-
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func keyboardNotification(notification: NSNotification) {
+        
+        let isShowing = notification.name == UIKeyboardWillShowNotification
+        
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue()
+            let endFrameHeight = endFrame?.size.height ?? 0.0
+            let duration:NSTimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.unsignedLongValue ?? UIViewAnimationOptions.CurveEaseInOut.rawValue
+            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            self.keyboardHeightLayoutConstraint?.constant = isShowing ? endFrameHeight : 0.0
+            UIView.animateWithDuration(duration,
+                delay: NSTimeInterval(0),
+                options: animationCurve,
+                animations: { self.view.layoutIfNeeded() },
+                completion: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,7 +84,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     // MARK: - Helper Functions
     
     func updateStatusText(passedString: String){
-      //  statusText.text = passedString + "\r" + statusText.stringValue
+        //  statusText.text = passedString + "\r" + statusText.stringValue
     }
     
     
@@ -131,8 +135,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             
             println("We are ON!")
             
-            advertiseNewName("uh, hello?")
-/*
+            
+            /*
             // Prep Advertising Packet for Periperhal
             let manufacturerData = identifer.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
             
@@ -143,14 +147,14 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             let localNameChatString = "Ghost \(messageString)"
             
             let dataToBeAdvertised:[String:AnyObject!] = [
-                CBAdvertisementDataLocalNameKey: "\(localNameChatString)",
-                CBAdvertisementDataManufacturerDataKey: "Hello Hello Hello Hello",
-                CBAdvertisementDataServiceUUIDsKey: [theUUid],]
+            CBAdvertisementDataLocalNameKey: "\(localNameChatString)",
+            CBAdvertisementDataManufacturerDataKey: "Hello Hello Hello Hello",
+            CBAdvertisementDataServiceUUIDsKey: [theUUid],]
             
             dataToBeAdvertisedGolbal = dataToBeAdvertised
             // Start Advertising The Packet
             myPeripheralManager?.startAdvertising(dataToBeAdvertised)
-  */
+            */
             
             break
         case .PoweredOff:
@@ -205,7 +209,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         
         let theUUid = CBUUID(NSUUID: uuid)
         
-        let nameString = nameField.text
+        let nameString = "saman"
+
         
         let dataToBeAdvertised:[String:AnyObject!] = [
             CBAdvertisementDataLocalNameKey: "Ghost \(nameString): \(passedString)",
@@ -242,8 +247,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         myCentralManager = CBCentralManager(delegate: self, queue: dispatch_get_main_queue())
         
     }
-
-
+    
+    
     
     func centralManagerDidUpdateState(central: CBCentralManager!) {
         
@@ -265,7 +270,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             //Scan for other Peripherals
             startScanning()
             
-
+            
             
             
         case .PoweredOff:
@@ -288,7 +293,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
             
         }
     }
-
+    
     func startScanning(){
         
         
@@ -296,7 +301,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         
         //    refreshArrays()
         
-       //   tableView.reloadData()
+        //   tableView.reloadData()
         
         myCentralManager.scanForPeripheralsWithServices(nil, options: nil )   // call to scan for services
         
@@ -314,7 +319,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         var myMessageString: String!
         
         
-       // myMessageString = advertisementData[CBAdvertisementDataManufacturerDataKey] as String
+        //myMessageString = advertisementData[CBAdvertisementDataManufacturerDataKey] as String
         
         
         let prefixString = "Ghost"
@@ -376,26 +381,25 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     }
     
     
-
+    
     
     
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        return 2
+        return 1
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
+        
             return cleanAndSortedChatArray.count
-        }else{
-            return cleanAndSortedArray.count
-        }
+        
         
     }
+
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -421,10 +425,7 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
-            return "Chat Activity"
-        }else if section == 1{
-            tableView.sectionIndexColor = UIColor.darkGrayColor()
-            return "BackGround Devices"
+            return "ghosts"
         } else {
             return "Misc"
         }
@@ -437,17 +438,24 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //
-        
         println("selected: \(indexPath.row)")
-  //      updateStatusLabel("selected: \(cleanAndSortedArray[indexPath.row].3)")
+        //      updateStatusLabel("selected: \(cleanAndSortedArray[indexPath.row].3)")
         
         
         
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        advertiseNewName(myTextField.text)
+        myTextField.text=""
+        textField.resignFirstResponder()
+      //  myCentralManager.stopScan()
+        //refreshArrays()
+        //startScanning()
+        return false
 
+    }
     
     
     
-
 }
-
